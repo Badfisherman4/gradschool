@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBA Program Finder</title>
+</head>
+<body>
+    <h1>MBA Program Finder</h1>
+    
+    <!-- Personal Background Section -->
+    <h2>Personal Background</h2>
+    <label for="undergrad-major">Undergraduate Major:</label>
+    <select id="undergrad-major">
+        <option value="business">Business/Finance/Economics</option>
+        <option value="stem">STEM</option>
+        <option value="arts">Arts/Humanities</option>
+        <option value="social-sciences">Social Sciences</option>
+        <option value="other">Other</option>
+    </select>
+    <br><br>
+    
+    <label for="work-experience">Work Experience (Years):</label>
+    <select id="work-experience">
+        <option value="0-2">0-2 years</option>
+        <option value="3-5">3-5 years</option>
+        <option value="6-10">6-10 years</option>
+        <option value="10+">10+ years</option>
+    </select>
+    <br><br>
+
+    <!-- Academic Section -->
+    <h2>Academic Information</h2>
+    <label for="gpa">Undergraduate GPA:</label>
+    <select id="gpa">
+        <option value="<2.5">Below 2.5</option>
+        <option value="2.5-3.0">2.5 - 3.0</option>
+        <option value="3.0-3.5">3.0 - 3.5</option>
+        <option value="3.5+">3.5+</option>
+    </select>
+    <br><br>
+
+    <label for="test-score">Standardized Test:</label>
+    <select id="test-score">
+        <option value="GMAT">GMAT</option>
+        <option value="GRE">GRE</option>
+        <option value="waiver">None/Test Waiver</option>
+    </select>
+    <br><br>
+
+    <!-- Submit Button -->
+    <button onclick="showSelections()">Submit</button>
+
+    <!-- Results Section -->
+    <h2>Results</h2>
+    <p id="results"></p>
+
+    <script>
+        function showSelections() {
+            const major = document.getElementById("undergrad-major").value;
+            const experience = document.getElementById("work-experience").value;
+            const gpa = document.getElementById("gpa").value;
+            const test = document.getElementById("test-score").value;
+
+            document.getElementById("results").innerText = 
+                `Your Selections:\nUndergrad Major: ${major}\nWork Experience: ${experience}\nGPA: ${gpa}\nTest: ${test}`;
+        }
+    </script>
+</body>
+</html>
